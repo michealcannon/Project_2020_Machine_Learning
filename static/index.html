@@ -26,7 +26,7 @@
             <button type="button" class="btn btn-success" id="uniform-button">Power</button>
           </div>
           <div class="col-sm">
-            <button type="button" class="btn btn-primary" id="normal-button">Normal</button>
+            <button type="button" class="btn btn-primary" id="power-output">power output</button>
           </div>
         </div>
       </div>
@@ -46,13 +46,14 @@
 
 
     <script>
-        // // Adapted from stack overflow posts.
-        // $("#normal-button").click(function(e) {
-        //     e.preventDefault();
-        //     $.getJSON("/api/normal", function(data) {
-        //         $('#output').val(data.value);
-        //     });
-        // });
+         // Adapted from stack overflow posts.
+         $("#power-output").click(function(e) {
+             e.preventDefault();
+             $.getJSON("/power", function(data) {
+                    console.log(data);
+                    $('#output').val(data.value);
+             });
+         });
         // $("#uniform-button").click(function(e) {
         //     e.preventDefault();
         //     $.getJSON("/api/uniform", function(data) {
