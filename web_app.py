@@ -9,7 +9,7 @@ app = fl.Flask(__name__)
 # Add root route.
 @app.route("/")
 def home():
-  return "hello world"
+  return app.send_static_file('index.html')
 
 # TO RUN IN WINDOWS:
 # set FLASK_APP=rando.py
