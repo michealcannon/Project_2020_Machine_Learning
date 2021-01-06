@@ -16,17 +16,26 @@
   <body>
     <h1>Power Production Application</h1>
     <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <input class="form-control" id="input" type="text" placeholder="Wind speed here.." >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <button type="button" class="btn btn-success" id="speed-button">Input Wind Speed</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input class="form-control" id="output" type="text" placeholder="Wind speed here.." readonly>
+            <input class="form-control" id="output" type="text" placeholder="Power Output here.." readonly >
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <button type="button" class="btn btn-success" id="model-button">Load Model</button>
-          </div>
-          <div class="col-sm">
-            <button type="button" class="btn btn-primary" id="power-output">power output</button>
+            <button type="button" class="btn btn-primary" id="power-output">Get Power Output</button>
           </div>
         </div>
       </div>
