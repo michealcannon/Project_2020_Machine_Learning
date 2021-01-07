@@ -15,29 +15,32 @@
   </head>
   <body>
     <h1>Power Production Application</h1>
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-sm">
-          <input class="form-control" id="input" type="text" placeholder="Wind speed here.." >
+          <form action="{{ url_for('power') }}" method="POST">
+          <input class="form-control" id="input" type="text" placeholder="Power Output here.." name = "wind_speed" >
+          </form>
         </div>
       </div>
       <div class="row">
         <div class="col-sm">
-          <button type="button" class="btn btn-success" id="speed-button">Input Wind Speed</button>
+          <button type="button" class="btn btn-primary" id="wind_speed">Get Power Output</button>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input class="form-control" id="output" type="text" placeholder="Power Output here.." readonly >
+            <input class="form-control" id="input" type="text" placeholder="Input wind speed here.."  >
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <button type="button" class="btn btn-primary" id="power-output">Get Power Output</button>
+            <button type="button" class="btn btn-primary" id="power-function">Get Power Output</button>
           </div>
         </div>
+        <div id = "power-output"></div>
       </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -56,19 +59,37 @@
 
     <script>
          // Adapted from stack overflow posts.
-         $("#power-output").click(function(e) {
-             e.preventDefault();
-             $.getJSON("/power", function(data) {
-                    console.log(data);
-                    $('#output').val(data.value);
-             });
-         });
+        //  $("#power-output").click(function(e) {
+        //      e.preventDefault();
+        //      $.getJSON("/power", function(data) {
+        //             console.log(data);
+        //             $('#output').val(data.value);
+        //      });
+        //  });
         // $("#model-button").click(function(e) {
         //     e.preventDefault();
         //     $.getJSON("/api/uniform", function(data) {
         //         $('#output').val(data.value);
         //     });
         // });
+          // user input sent to the flask route 
+          // code adapted from https://stackoverflow.com/questions/50042492/call-flask-function-from-form-and-display-results-on-same-page
+        $(document).ready(function() {
+           $('#power-function').click(function(){
+           var input = $('#input').val();
+           $.ajax({
+           url: "/power",
+           type: "get",
+           data: {input: input},
+           success: function(response) {
+           $("#power-output").html(response.html);
+          },
+          error: function(xhr) {
+            //Do Something to handle error
+         }
+         });
+       });
+    });
     </script>
   </body>
 </html>
