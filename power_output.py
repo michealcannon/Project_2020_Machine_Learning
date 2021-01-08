@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 # neural neworks
 import tensorflow.keras as kr
 
+
+# this code all explained in jupyter notebook
 def load_model():
     data = pd.read_csv('power_production.csv')
     # drop rows where the power putput is zero even though wind speed > 10
