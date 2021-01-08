@@ -28,7 +28,7 @@ def power():
   x = float(input)
   value = model.predict([x])
   output = str(value[0][0])     # have to extract the value from the matrix here and change to string to allow json return
-  return {"html" : str(value[0][0])}  # return as html... code adapted from https://stackoverflow.com/questions/50042492/call-flask-function-from-form-and-display-results-on-same-page
+  return {"html" : output}  # return as html... code adapted from https://stackoverflow.com/questions/50042492/call-flask-function-from-form-and-display-results-on-same-page
   
 # TO RUN IN WINDOWS:
 # set FLASK_APP=rando.py
