@@ -12,14 +12,14 @@ It contains:
 3. A Dockerfile to build and run the web service in a container.
 4. Standard files e.g. README, .gitignore, .dockerignore.
 
-To Run in Windows:
-set FLASK_APP=web_app.py
-python -m flask run
+To Run in Windows:  
+set FLASK_APP=web_app.py  
+python -m flask run  
 
-To Run in Linux:
-exort FLASK_APP = web_app.py
-python3 -m flask run
+To Run in Linux:  
+exort FLASK_APP = web_app.py  
+python3 -m flask run  
 
 Docker:
-docker build . -t power-image
+docker build . -t power-image  
 docker run --name power-container -d -p 5000:5000 power-image
